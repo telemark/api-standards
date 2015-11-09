@@ -21,7 +21,8 @@ oppdatert uten å laste ned datasettet etter hver endring. Hvis dette er en øns
 
 ### Versjonering
 
-Aldri utgi et API uten versjonstall.
+Aldri utgi et API uten versjonstall. Sett versjonsnummeret til API i URLen.
+
 Versjoner skal være heltall med prefiksen 'v' foran, ikke desimaltall. For eksempel:
 * Gode: v1, v2, v3
 * Dårlig: v-1.1, v1.2, 1.3
