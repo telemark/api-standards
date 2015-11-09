@@ -1,12 +1,12 @@
 # API-standarder
 
-Dette dokumentet inneholder standarder, og beste praksis for APIer. 
+Dette dokumentet inneholder standarder, og beste praksis for applikasjonsprogrammeringsgrensesnitt (API-er). 
 
 ...
 
 ### Design for vanlige bruksmåter
 
-For APIer som skal syndikere data, vurder flere vanlige bruksmåter:
+For API-er som skal syndikere data, vurder flere vanlige bruksmåter:
 
 * **Bulk data.** Klienter vil ofte etablere sin egen kopi av API-datasettet i sin helhet.
 For eksempel kan noen ville bygge en egen søkemotorpå toppen av datasettet,
@@ -18,21 +18,21 @@ oppdatert uten å laste ned datasettet etter hver endring. Hvis dette er en øns
 
 ### Versjonering
 
-Aldri utgi et API uten versjonstall. Sett versjonsnummeret til APIet i URLen.
+Aldri utgi et API uten versjonstall. Sett versjonsnummeret til API-et i URLen.
 
 Versjoner skal være heltall med prefiksen 'v' foran, ikke desimaltall. For eksempel:
 * Gode: v1, v2, v3
 * Dårlig: v-1.1, v1.2, 1.3
 
-Vedlikehold APIet minst en versjon tilbake.
+Vedlikehold API-et minst en versjon tilbake.
 
 ### Bruk ditt eget API
 
-Den beste måten for å forstå, implementere, og håndtere svakheter i APIet - er å bruke det i et produksjonssystem.
+Den beste måten for å forstå, implementere, og håndtere svakheter i API-et - er å bruke det i et produksjonssystem.
 
 ### Kontaktinformasjon
 
-Benytt en opplagt mekanisme, slik at kundene enkelt kan rapportere problemer, og stille spørsmål om APIet.
+Benytt en opplagt mekanisme, slik at kundene enkelt kan rapportere problemer, og stille spørsmål om API-et.
 
 Ved bruk av f.eks GitHub for API koden, bruk den tilhørende "issue trackeren" der.
 I tillegg, legg ved en e-post adresse for direkte, ikke offentlig henvendelser.
@@ -55,11 +55,11 @@ Informasjon kan bli sendt til et endepunkt på følgende måter:
 * HTTP headers (f.eks `X-Api-Key: nøkkel`)
 
 Når vi snakker om "RESTful" i disse dager, mener vi egentlig å lage enkle, intuitive endepunkter som
-representerer unike funksjoner i APIet.
+representerer unike funksjoner i API-et.
 
 Generelt:
 
-* **Unngå singel-endepunkt APIer**. Ikke putt flere operasjoner i samme endepunkt med samme HTTP-verb.
+* **Unngå singel-endepunkt API-er**. Ikke putt flere operasjoner i samme endepunkt med samme HTTP-verb.
 * **Prioriter enkelhet**. Det bør være enkelt å gjette hva et endepunkt gjør ved å se på URLen og HTTP-verbet, uten å måtte se på spørrestrengen.
 * Endepunkt URL-er bør annonsere ressurser, og **unngå verb**
 
@@ -89,13 +89,13 @@ Her er et eksempel på et HTTP-verb kart for opprette, lese, oppdatere, og slett
 
 ### Bruk JSON
 
-[JSON](https://en.wikipedia.org/wiki/JSON) er en utmerket, bredt støttet transport format, egnet for mange web-APIer.
+[JSON](https://en.wikipedia.org/wiki/JSON) er en utmerket, bredt støttet transport format, egnet for mange web API-er.
 
-Støtte JSON, og bare JSON, er i praktisk standard for APIer. Det reduserer kompleksitet for både API-leverandør, og forbruker.
+Støtte JSON, og bare JSON, er i praktisk standard for API-er. Det reduserer kompleksitet for både API-leverandør, og forbruker.
 
 Generelle JSON retningslinjer:
 
-* Responser bør være **et JSON objekt** (ikke en array). Ved bruk av array for å returnere resultater, begrenses muligheten til å inkludere metadata om resultatene, og APIets evne til å legge til flere toppnøkler i fremtiden.
+* Responser bør være **et JSON objekt** (ikke en array). Ved bruk av array for å returnere resultater, begrenses muligheten til å inkludere metadata om resultatene, og API-ets evne til å legge til flere toppnøkler i fremtiden.
 * **Ikke bruk uforutsigbare nøkler**. Parsing av en JSON respons der nøkelene er uforutsigbare (f.eks utledet fra data) er vanskelig, og skaper friksjon for klienter.
 * **Bruk [`camelCase`](https://en.wikipedia.org/wiki/CamelCase) for nøkler**. Ulike språk benytter ulike praksiser. JSON bruker `camelCase`, ikke [`snake_case`](https://en.wikipedia.org/wiki/Snake_case).
 
@@ -115,11 +115,11 @@ Men _hvis_ nøklene brukes til å administrere, og godkjenne API-tilgang, bør A
 
 Dette gjør det mulig for nykommere å eksperimentere med API i demo miljøer og med enkle `curl` /` wget`  forespørsler.
 
-Vurder om dette er produktets mål å tillate et visst nivå av normal bruk i produksjon av APIet, uten håndheving avansert registrering av klienter.
+Vurder om dette er produktets mål å tillate et visst nivå av normal bruk i produksjon av API-et, uten håndheving avansert registrering av klienter.
 
 ### Feilhåndtering
 
-Håndter alle feil (inkludert uoppfangede unntak), og returner det i en datastruktur i samme format som resten av APIet.
+Håndter alle feil (inkludert uoppfangede unntak), og returner det i en datastruktur i samme format som resten av API-et.
 
 For eksempel kan et API gi følgende når en uoppfanget unntak oppstår:
 
@@ -156,7 +156,7 @@ HTTP-svar med feilinformasjon bør bruke en `4XX` statuskode for å indikere en 
 
 ### Sidenummerering
 
-Hvis sidenummerering er nødvendig for å navigere datasett, bruk den metoden som er mest fornuftig for APIets data.
+Hvis sidenummerering er nødvendig for å navigere datasett, bruk den metoden som er mest fornuftig for API-ets data.
 
 Vanlige parametere:
 
@@ -183,14 +183,14 @@ Et eksempel på hvordan dette kan være implimentert:
 
 ### Bruk HTTPS
 
-Nye APIer må bruke og kreve [HTTPS kryptering](https://en.wikipedia.org/wiki/HTTP_Secure) (med TLS/SSL). HTTPS gir:
+Nye API-er må bruke og kreve [HTTPS kryptering](https://en.wikipedia.org/wiki/HTTP_Secure) (med TLS/SSL). HTTPS gir:
 
 * **Sikkerhet**. Innholdet i forespørselen krypteres over Internett.
-* **Autentisitet**. En sterkere garanti for at en klient kommuniserer med det virkelige APIet.
-* **Personvern**. Forbedret personvern for applikasjoner og brukere som benytter APIet. HTTP-headers og søkestrengparametre (blant annet) vil bli kryptert.
-* **Kompatibilitet**. Bredere klient kompatibilitet. For at CORS forespørsler til APIet skal virke på HTTPS nettsteder - ikke bli blokkert som "mixed content" - må disse forespørslene må være over HTTPS.
+* **Autentisitet**. En sterkere garanti for at en klient kommuniserer med det virkelige API-et.
+* **Personvern**. Forbedret personvern for applikasjoner og brukere som benytter API-et. HTTP-headers og søkestrengparametre (blant annet) vil bli kryptert.
+* **Kompatibilitet**. Bredere klient kompatibilitet. For at CORS forespørsler til API-et skal virke på HTTPS nettsteder - ikke bli blokkert som "mixed content" - må disse forespørslene må være over HTTPS.
 
-HTTPS bør konfigureres ved hjelp av moderne beste praksis, herunder koder som det støtter [forward secrecy](http://en.wikipedia.org/wiki/Forward_secrecy), og [HTTP Strict Transport Security](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **Dette er ikke uttømmende**: Bruk verktøy som [SSL Labs](ssllabs.com/ssltest/analyze.html) til å vurdere APIets HTTPS konfigurasjon.
+HTTPS bør konfigureres ved hjelp av moderne beste praksis, herunder koder som det støtter [forward secrecy](http://en.wikipedia.org/wiki/Forward_secrecy), og [HTTP Strict Transport Security](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **Dette er ikke uttømmende**: Bruk verktøy som [SSL Labs](ssllabs.com/ssltest/analyze.html) til å vurdere API-ets HTTPS konfigurasjon.
 
 For et eksisterende API som går over vanlig HTTP, er første skritt å legge til HTTPS-støtte, og oppdatere dokumentasjonen til å erklære det standard, bruk det i eksempler osv.
 
@@ -233,9 +233,9 @@ Content-Type: application/json; charset=utf-8
 
 ### CORS
 
-For at klienter skal kunne bruke et API fra innsiden i nettlesere, må APIet [aktivere CORS](http://enable-cors.org).
+For at klienter skal kunne bruke et API fra innsiden i nettlesere, må API-et [aktivere CORS](http://enable-cors.org).
 
-For den enkleste og mest vanlige bruksmåten, der hele APIet bør være tilgjengelig fra innsiden av nettleseren, aktivering av CORS er så enkel som å inkludere denne HTTP header i alle svarene:
+For den enkleste og mest vanlige bruksmåten, der hele API-et bør være tilgjengelig fra innsiden av nettleseren, aktivering av CORS er så enkel som å inkludere denne HTTP header i alle svarene:
 
 ```
 Access-Control-Allow-Origin: *
