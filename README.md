@@ -89,9 +89,9 @@ Her er et eksempel på et HTTP-verb kart for opprette, lese, oppdatere, og slett
 
 ### Bruk JSON
 
-[JSON](https://en.wikipedia.org/wiki/JSON) er en utmerket, bredt støttet transport format, egnet for mange web API-er.
+[JSON](https://en.wikipedia.org/wiki/JSON) er en utmerket, bredt støttet transport format, egnet for de fleste API-er.
 
-Støtte JSON, og bare JSON, er i praktisk standard for API-er. Det reduserer kompleksitet for både API-leverandør, og forbruker.
+Bruk av JSON, og bare JSON, er i praktisk standard for API-er. Det reduserer kompleksitet for både API-leverandør, og forbruker.
 
 Generelle JSON retningslinjer:
 
