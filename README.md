@@ -84,8 +84,8 @@ Her er et eksempel på et HTTP-verb kart for opprette, lese, oppdatere, og slett
 | HTTP METHOD | POST            | GET       | PUT         | DELETE |
 | ----------- | --------------- | --------- | ----------- | ------ |
 | CRUD OP     | CREATE          | READ      | UPDATE      | DELETE |
-| /dogs       | Create new dogs | List dogs | Bulk update | Delete all dogs |
-| /dogs/1234  | Error           | Show Bo   | If exists, update Bo; If not, error | Delete Bo |
+| /frogs       | Create new frogs | List frogs | Bulk update | Delete all frogs |
+| /frogs/1234  | Error           | Show Bo   | If exists, update Bo; If not, error | Delete Bo |
 
 ### Bruk JSON
 
