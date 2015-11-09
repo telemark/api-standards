@@ -121,17 +121,7 @@ Vurder om dette er produktets mål å tillate et visst nivå av normal bruk i pr
 
 Håndter alle feil (inkludert uoppfangede unntak), og returner det i en datastruktur i samme format som resten av API-et.
 
-For eksempel kan et API gi følgende når en uoppfanget unntak oppstår:
-
-```json
-{
-  "status": 400,
-  "message": "Description of the error.",
-  "exception": "[detailed stacktrace]"
-}
-```
-
-Feilmeldinger må ha med en HTTP status kode, en melding til utviklere, melding for sluttbrukeren (når det er hensiktsmessig), en intern feilkode (corresponding to some specific internally determined ID), link hvor utvikleren kan finne mer info. For eksempel:
+Feilmeldinger må ha med en HTTP status kode, en melding til utviklere, melding for sluttbrukeren (når det er hensiktsmessig), en intern feilkode (som henviser til en spesifisert intern ID), og en link hvor utvikleren kan finne mer info. For eksempel:
 
 ```json
 {
@@ -145,7 +135,7 @@ Feilmeldinger må ha med en HTTP status kode, en melding til utviklere, melding 
 }
 ```
 
-Bruk tre enkle, vanlige svarkoder som indikere (1) vellykket, (2) svikt på grunn av klientside problem, (3) svikt på grunn av server-side problem:
+Eksempler på HTTP-svarkoder
 
 * 200 - OK
 * 400 - Bad Request
