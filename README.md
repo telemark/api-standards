@@ -2,10 +2,7 @@
 
 Dette dokumentet inneholder standarder, og beste praksis for APIer. 
 
-This document provides a mix of:
-
-* **High level design guidance** that individual APIs interpret to meet their needs.
-* **Low level web practices** that most modern HTTP APIs use.
+...
 
 ### Design for vanlige bruksmåter
 
