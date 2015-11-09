@@ -226,7 +226,7 @@ Bruk bare [UTF-8](http://utf8everywhere.org).
 
 Forvent tegn med "smarte anførselstegn" i API-resultatet, selv om de ikke er forventet.
 
-En API skal fortelle klientene at det forventes UTF-8 ved å inkludere en karaktersett notasjon i `Content-Type` header for svaret.
+Et API skal fortelle klientene at det forventes UTF-8 ved å inkludere en karaktersett notasjon i `Content-Type` header for svaret.
 
 Et API som returnerer JSON må bruke:
 
