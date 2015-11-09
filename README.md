@@ -205,28 +205,28 @@ For bedre ytelse anbefaler vi å bruke gzip-komprimering av API-svarene.
 
 #### Server Name Indication
 
-If you can, use [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) to serve HTTPS requests.
+Hvis du kan, bruk [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) for å tjene HTTPS forespørsler.
 
-SNI is an extension to TLS, [first proposed in 2003](http://tools.ietf.org/html/rfc3546), that allows SSL certificates for multiple domains to be served from a single IP address.
+SNI er en utvidelse til TLS, [først foreslått i 2003](http://tools.ietf.org/html/rfc3546), som tillater SSL-sertifikater for flere domener å bli servert fra en enkelt IP-adresse.
 
-Using one IP address to host multiple HTTPS-enabled domains can significantly lower costs and complexity in server hosting and administration. This is especially true as IPv4 addresses become more rare and costly. SNI is a Good Idea, and it is widely supported.
+Ved hjelp av en IP-adresse til å betjene flere HTTPS-aktiverte domener kan gi betydelig lavere kostnader og kompleksitet i server-hosting og administrasjon.
 
-However, some clients and networks still do not properly support SNI. As of this writing, that includes:
+Dette gjelder særlig når IPv4-adresser blir mer sjeldne og kostbare. SNI er en god idé, og det er bred støtte.
 
-* Internet Explorer 8 and below on Windows XP
-* Android 2.3 (Gingerbread) and below.
-* All versions of Python 2.x (a version of Python 2.x with SNI [is planned](http://legacy.python.org/dev/peps/pep-0466/)).
-* Some enterprise network environments have been configured in some custom way that disables or interferes with SNI support. One identified network where this is the case: the White House.
+Men noen klienter og nettverk fortsatt ikke skikkelig støtte for SNI. For øyeblikket:
 
-When implementing SSL support for an API, evaluate whether SNI support makes sense for the audience it serves.
+* Internet Explorer 8 og under på Windows XP
+* Android 2.3 (Gingerbread) og under.
+* Alle versjoner av Python 2.x (En versjon av Python 2.x med SNI [er planlagt](http://legacy.python.org/dev/peps/pep-0466/)).
+* Noen enterprise nettverksmiljøer er konfigurert på en tilpasset måte som deaktiverer eller forstyrrer SNI støtte.
 
 ### Bruk UTF-8
 
 Bruk bare [UTF-8](http://utf8everywhere.org).
 
-Expect accented characters or "smart quotes" in API output, even if they're not expected.
+Forvent tegn med "smarte anførselstegn" i API-resultatet, selv om de ikke er forventet.
 
-An API should tell clients to expect UTF-8 by including a charset notation in the `Content-Type` header for responses.
+En API skal fortelle klientene at det forventes UTF-8 ved å inkludere en karaktersett notasjon i `Content-Type` header for svaret.
 
 Et API som returnerer JSON må bruke:
 
