@@ -243,7 +243,7 @@ JSONP er [ikke sikkert og gir dårlig ytelse](https://gist.github.com/tmcw/62444
 
 Et API er bare så god som sin dokumentasjon.
 
-Dokumentasjon skal være enkelt å finne, og offentlig tilgjengelig.
+Dokumentasjon skal være enkelt å finne, på en nettside som er offentlig tilgjengelig.
 
 Eksemplene bør inneholde fulle forespørsler, og svar.
 
