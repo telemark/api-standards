@@ -1,4 +1,4 @@
-# API Standarder
+# API-standarder
 
 Dette dokumentet inneholder standarder, og beste praksis for APIer. 
 
