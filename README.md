@@ -190,23 +190,6 @@ Deretter vurder muligheten til å deaktivere eller omdirigere HTTP forespørsler
 
 For bedre ytelse anbefaler vi å bruke gzip-komprimering av API-svarene.
 
-#### Server Name Indication
-
-Hvis du kan, bruk [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) for å tjene HTTPS forespørsler.
-
-SNI er en utvidelse til TLS, [først foreslått i 2003](http://tools.ietf.org/html/rfc3546), som tillater SSL-sertifikater for flere domener å bli servert fra en enkelt IP-adresse.
-
-Ved hjelp av en IP-adresse til å betjene flere HTTPS-aktiverte domener kan gi betydelig lavere kostnader og kompleksitet i server-hosting og administrasjon.
-
-Dette gjelder særlig når IPv4-adresser blir mer sjeldne og kostbare. SNI er en god idé, og det er bred støtte.
-
-Men noen klienter og nettverk fortsatt ikke skikkelig støtte for SNI. For øyeblikket:
-
-* Internet Explorer 8 og under på Windows XP
-* Android 2.3 (Gingerbread) og under.
-* Alle versjoner av Python 2.x (En versjon av Python 2.x med SNI [er planlagt](http://legacy.python.org/dev/peps/pep-0466/)).
-* Noen enterprise nettverksmiljøer er konfigurert på en tilpasset måte som deaktiverer eller forstyrrer SNI støtte.
-
 ### Bruk UTF-8
 
 Bruk bare [UTF-8](http://utf8everywhere.org).
