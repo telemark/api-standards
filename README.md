@@ -124,7 +124,7 @@ Vurder om dette er produktets mål å tillate et visst nivå av normal bruk i pr
 
 Håndter alle feil (inkludert uoppfangede unntak), og returner det i en datastruktur i samme format som resten av APIet.
 
-For eksempel kan et JSON API gi følgende når en uoppfanget unntak oppstår:
+For eksempel kan et API gi følgende når en uoppfanget unntak oppstår:
 
 ```json
 {
