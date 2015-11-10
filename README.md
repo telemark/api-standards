@@ -1,10 +1,8 @@
 # API-standarder
 
-Dette dokumentet inneholder standarder, og beste praksis for applikasjonsprogrammeringsgrensesnitt (API-er). 
+Dette dokumentet inneholder forslag til standarder for APIer basert på beste praksis.
 
-...
-
-### Design for vanlige bruksmåter
+## Design for vanlige bruksmåter
 
 For API-er som skal syndikere data, vurder flere vanlige bruksmåter:
 
@@ -16,7 +14,7 @@ Hvis API ikke kan lett fungere som en bulk dataleverandør, legg til en separat 
 oppdatert uten å laste ned datasettet etter hver endring. Hvis dette er en ønsket bruksmåte, prioriter den i API-designet.
 * **Kjøre "dyre" spørringer.** Hva ville skje hvis en klient ønsket å automatisk sende tekstmeldinger til tusenvis av mennesker eller lyse opp på siden av en skyskraper hver gang en ny oppføring opprettes? Vurder om API-oppføringene alltid vil være i en pålitelig uforanderlig orden, og om de har en tendens til å dukke opp i klumper eller i en jevn strøm. Generelt sett, vurder "entropien" som API-klienten vil oppleve.
 
-### Versjonering
+## Versjonering
 
 Aldri utgi et API uten versjonstall. Sett versjonsnummeret til API-et i URLen.
 
@@ -26,20 +24,20 @@ Versjoner skal være heltall med prefiksen 'v' foran, ikke desimaltall. For ekse
 
 Vedlikehold API-et minst en versjon tilbake.
 
-### Kontaktinformasjon
+## Kontaktinformasjon
 
 Benytt en opplagt mekanisme, slik at kundene enkelt kan rapportere problemer, og stille spørsmål om API-et.
 
 Ved bruk av f.eks GitHub for API koden, bruk den tilhørende "issue trackeren" der.
 I tillegg, legg ved en e-post adresse for direkte, ikke offentlig henvendelser.
 
-### Varsel ved oppdateringer
+## Varsel ved oppdateringer
 
 Bruk en enkel mekanisme slik at klientene kan følge endringer for API-et.
 
 Vanlige måter å håndtere dette på, er ved bruk av e-post lister eller en [dedikert utvikler blog](https://developer.github.com/changes/) med en RSS-strøm.
 
-### API endepunkt
+## API endepunkt
 
 Et "endepunkt" er en kombinasjon av to ting:
 * Et verb (f.eks `GET` eller `POST`)
@@ -65,13 +63,13 @@ Noen eksempler på disse prinsippene i aksjon:
 * [OpenFDA example query](http://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
-### Bruk flertall substantiver
+## Bruk flertall substantiver
 
 Ikke bland sammen entall og flertall substantiver.
 
 Hold det enkelt ved å bare bruke flertall substantiver for alle ressurser.
 
-### HTTP-verb
+## HTTP-verb
 
 HTTP-verb, eller metoder, skal bli brukt i samsvar med definisjonene under [HTTP/1.1 standarden](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). 
 
@@ -83,7 +81,7 @@ Her er et eksempel på et HTTP-verb kart for opprette, lese, oppdatere, og slett
 | /frogs       | Create new frogs | List frogs | Bulk update | Delete all frogs |
 | /frogs/1234  | Error           | Show Bo   | If exists, update Bo; If not, error | Delete Bo |
 
-### Bruk JSON
+## Bruk JSON
 
 [JSON](https://en.wikipedia.org/wiki/JSON) er en utmerket, bredt støttet transport format, egnet for de fleste API-er.
 
@@ -95,7 +93,7 @@ Generelle JSON retningslinjer:
 * **Ikke bruk uforutsigbare nøkler**. Parsing av en JSON respons der nøkelene er uforutsigbare (f.eks utledet fra data) er vanskelig, og skaper friksjon for klienter.
 * **Bruk [`camelCase`](https://en.wikipedia.org/wiki/CamelCase) for nøkler**. Ulike språk benytter ulike praksiser. JSON bruker `camelCase`, ikke [`snake_case`](https://en.wikipedia.org/wiki/Snake_case).
 
-### Bruk et konsekvent datoformat
+## Bruk et konsekvent datoformat
 
 Bruk [ISO 8601](https://xkcd.com/1179/) i UTC for både forespørsler og svar.
 
@@ -103,7 +101,7 @@ For datoer ser det slik ut `2015-02-27`. For fullstendige tidspunkt `2015-02-27T
 
 Dette datoformatet brukes over hele nettet, og setter hvert felt i en konsistent rekkefølge.
 
-### API Nøkler
+## API Nøkler
 
 Disse standardene tar ikke stilling til om ikke å bruke API-nøklene.
 
@@ -113,7 +111,7 @@ Dette gjør det mulig for nykommere å eksperimentere med API i demo miljøer og
 
 Vurder om dette er produktets mål å tillate et visst nivå av normal bruk i produksjon av API-et, uten håndheving avansert registrering av klienter.
 
-### Feilhåndtering
+## Feilhåndtering
 
 Håndter alle feil (inkludert uoppfangede unntak), og returner det i en datastruktur i samme format som resten av API-et.
 
@@ -140,7 +138,7 @@ Eksempler på HTTP-svarkoder
 
 HTTP-svar med feilinformasjon bør bruke en `4XX` statuskode for å indikere en svikt på klientsiden (for eksempel ugyldig autorisasjon eller en ugyldig parameter), og en` 5XX` statuskode for å angi en svikt på serversiden (for eksempel et uoppfanget unntak).
 
-### Sidenummerering
+## Sidenummerering
 
 Hvis sidenummerering er nødvendig for å navigere datasett, bruk den metoden som er mest fornuftig for API-ets data.
 
@@ -167,7 +165,7 @@ Et eksempel på hvordan dette kan være implimentert:
 }
 ```
 
-### Bruk HTTPS
+## Bruk HTTPS
 
 Nye API-er må bruke og kreve [HTTPS kryptering](https://en.wikipedia.org/wiki/HTTP_Secure) (med TLS/SSL). HTTPS gir:
 
@@ -182,11 +180,11 @@ For et eksisterende API som går over vanlig HTTP, er første skritt å legge ti
 
 Deretter vurder muligheten til å deaktivere eller omdirigere HTTP forespørsler. Se [GSA/api.data.gov#34](https://github.com/GSA/api.data.gov/issues/34) for en diskusjon angående noen av utfordringene ved overgangen fra HTTP->HTTPS.
 
-### Komprimering
+## Komprimering
 
 For bedre ytelse anbefaler vi å bruke gzip-komprimering av API-svarene.
 
-### Bruk UTF-8
+## Bruk UTF-8
 
 Bruk bare [UTF-8](http://utf8everywhere.org).
 
@@ -200,7 +198,7 @@ Et API som returnerer JSON må bruke:
 Content-Type: application/json; charset=utf-8
 ```
 
-### CORS
+## CORS
 
 For at klienter skal kunne bruke et API fra innsiden i nettlesere, må API-et [aktivere CORS](http://enable-cors.org).
 
@@ -213,7 +211,7 @@ Det er støttet av [alle moderne nettlesere](http://enable-cors.org/client.html)
 
 For mer avansert konfigurasjon, se på [W3C spesifikasjonene](http://www.w3.org/TR/cors/) eller [Mozilla's veiledning](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
-### Mellomlagring
+## Mellomlagring
 
 HTTP tilbyr et innebygd mellomlagrings -rammeverk!
 
@@ -223,7 +221,7 @@ Det kan gjøres på to måter: [ETAG](http://en.wikipedia.org/wiki/HTTP_ETag) og
 
 **Last-Modified**
 
-### Dokumentasjon
+## Dokumentasjon
 
 Et API er bare så god som sin dokumentasjon.
 
