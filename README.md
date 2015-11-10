@@ -26,10 +26,6 @@ Versjoner skal være heltall med prefiksen 'v' foran, ikke desimaltall. For ekse
 
 Vedlikehold API-et minst en versjon tilbake.
 
-### Bruk ditt eget API
-
-Den beste måten for å forstå, implementere, og håndtere svakheter i API-et - er å bruke det i et produksjonssystem.
-
 ### Kontaktinformasjon
 
 Benytt en opplagt mekanisme, slik at kundene enkelt kan rapportere problemer, og stille spørsmål om API-et.
@@ -216,10 +212,6 @@ Access-Control-Allow-Origin: *
 Det er støttet av [alle moderne nettlesere](http://enable-cors.org/client.html), og vil bare virke i JavaScript klienter som f.eks [jQuery](https://jquery.com).
 
 For mer avansert konfigurasjon, se på [W3C spesifikasjonene](http://www.w3.org/TR/cors/) eller [Mozilla's veiledning](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
-
-**Hva med JSONP?**
-
-JSONP er [ikke sikkert og gir dårlig ytelse](https://gist.github.com/tmcw/6244497). Hvis IE8 eller IE9 må være supportert, bruk Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) objektet istedet for JSONP. Det er [biblioteker](https://github.com/mapbox/corslite) som kan hjelpe til med dette.
 
 ### Mellomlagring
 
