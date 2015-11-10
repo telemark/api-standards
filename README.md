@@ -14,7 +14,7 @@ ved hjelp av ulike parametere, og teknologi enn den "offisielle" API tillater.
 Hvis API ikke kan lett fungere som en bulk dataleverandør, legg til en separat mekanisme for å anskaffe datasettet i bulk.
 * **Å holde seg oppdatert.** Spesielt for store datasett, kan kunder ønsker å beholde datasettet
 oppdatert uten å laste ned datasettet etter hver endring. Hvis dette er en ønsket bruksmåte, prioriter den i API-designet.
-* **Kjøre "dyre" spørringer.** What would happen if a client wanted to automatically send text messages to thousands of people or light up the side of a skyscraper every time a new record appears? Consider whether the API's records will always be in a reliable unchanging order, and whether they tend to appear in clumps or in a steady stream. Generally speaking, consider the "entropy" an API client would experience.
+* **Kjøre "dyre" spørringer.** Hva ville skje hvis en klient ønsket å automatisk sende tekstmeldinger til tusenvis av mennesker eller lyse opp på siden av en skyskraper hver gang en ny oppføring opprettes? Vurdere om API-oppføringene alltid vil være i en pålitelig uforanderlig orden, og om de har en tendens til å dukke opp i klumper eller i en jevn strøm. Generelt sett, vurder "entropien" som API-klienten vil oppleve.
 
 ### Versjonering
 
