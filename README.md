@@ -221,6 +221,15 @@ For mer avansert konfigurasjon, se på [W3C spesifikasjonene](http://www.w3.org/
 
 JSONP er [ikke sikkert og gir dårlig ytelse](https://gist.github.com/tmcw/6244497). Hvis IE8 eller IE9 må være supportert, bruk Microsoft's [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) objektet istedet for JSONP. Det er [biblioteker](https://github.com/mapbox/corslite) som kan hjelpe til med dette.
 
+### Mellomlagring
+
+HTTP tilbyr et innebygd mellomlagrings -rammeverk!
+
+Det kan gjøres på to måter: [ETAG](http://en.wikipedia.org/wiki/HTTP_ETag) og [Last-Modified](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.29)
+
+**ETAG**
+
+**Last-Modified**
 
 ### Dokumentasjon
 
