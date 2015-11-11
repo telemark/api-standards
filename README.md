@@ -240,5 +240,5 @@ Eksemplene bør inneholde fulle forespørsler, og svar.
 Dette prosjektet er lisensiert som [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 
 Alle bidrag til dette prosjektet vil bli lansert under CC0.
-Ved å sende en pull request, godtar du å overholde
-med denne fraskrivelse av opphavsrett.
+Ved å sende en pull request, eller på annen måte være delaktig i utviklingen, godtar du å overholde
+denne fraskrivelsen av opphavsretten.
